@@ -1,5 +1,6 @@
 int seconden;
 int amountleft;
+float millistart = 0;
 int aantalspaties = 0;
 boolean racing = true;
 
@@ -10,7 +11,7 @@ void setup(){
 void draw(){
   background(152,152,152);
   
-  seconden = millis()/1000;
+  seconden = millis()/1000 -  int(millistart/1000);
   amountleft = 10 - seconden;
   if(seconden >= 10){
    racing = false; 
@@ -33,4 +34,11 @@ void keyReleased(){
   if(keyCode == 32 && racing){
    aantalspaties++; 
   }
+  if(keyCode == 82){
+   millistart = millis();
+   aantalspaties = 0;
+  }
+
+
+  
 }
