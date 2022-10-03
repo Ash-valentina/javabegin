@@ -26,6 +26,6 @@ void keyReleased(){
  }
  if(keyCode == 82){
   counter = 0; 
-  running = !running;
+  //running = !running;
  }
 }
